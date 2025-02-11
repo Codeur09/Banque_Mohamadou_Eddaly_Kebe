@@ -1,45 +1,40 @@
 package fr.epita.assistants.presentation.rest;
 
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import fr.epita.assistants.presentation.rest.request.ReverseRequest;
 import fr.epita.assistants.presentation.rest.response.HelloResponse;
 import fr.epita.assistants.presentation.rest.response.ReverseResponse;
-
-import javax.ws.rs.BadRequestException;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @Path("/")
 public class Endpoints {
 
     @GET
-    @Path("hello/{username}")
+    @Path("hello/{user}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response greet(@PathParam("username") String username) {
-        if (username == null || username.trim().isEmpty()) {
-            return Response.status(Response.Status.NO_CONTENT).build();
-        }
-        HelloResponse helloResp = new HelloResponse("hello " + username);
-        return Response.status(Response.Status.OK).entity(helloResp).build();
+    public Response greetUser(@PathParam("user") String user) {
+        HelloResponse response = new HelloResponse();
+        response.setContent("hello " + user);
+        return Response.status(200).entity(response).build();
     }
 
     @POST
     @Path("reverse")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response invert(ReverseRequest req) {
-        if (req == null || req.getContent() == null || req.getContent().trim().isEmpty()) {
-            throw new BadRequestException("Le contenu de la requête ne doit pas être vide.");
-        }
-        String original = req.getContent();
-        String reversed = new StringBuilder(original).reverse().toString();
-        ReverseResponse resp = new ReverseResponse(original, reversed);
-        return Response.status(Response.Status.OK).entity(resp).build();
+    public Response reverseString(ReverseRequest req) {
+        String originalText = req.getContent();
+        String reversedText = new StringBuilder(originalText).reverse().toString();
+        ReverseResponse response = new ReverseResponse();
+        response.setOriginal(originalText);
+        response.setReversed(reversedText);
+        return Response.status(200).entity(response).build();
     }
 }
 
