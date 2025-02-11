@@ -1,6 +1,6 @@
 package fr.epita.assistants.data.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,6 @@ public class CourseModel {
 
     public CourseModel() {
     }
-
 
     public Long getId() {
         return id;

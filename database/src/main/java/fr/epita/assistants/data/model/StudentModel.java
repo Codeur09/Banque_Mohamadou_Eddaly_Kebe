@@ -1,6 +1,6 @@
 package fr.epita.assistants.data.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student_model")
@@ -23,7 +23,6 @@ public class StudentModel {
     public StudentModel() {
     }
 
-
     public Long getId() {
         return id;
     }
@@ -39,7 +38,7 @@ public class StudentModel {
     public String getEmail() {
         return email;
     }
-    
+
     public void setEmail(String email) {
         this.email = email;
     }
