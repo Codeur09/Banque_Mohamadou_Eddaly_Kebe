@@ -12,12 +12,12 @@ public class CourseModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "course_title")
-    private String title;
+    @Column(name = "name")
+    private String name;
 
     @ElementCollection
     @CollectionTable(name = "course_model_tags", joinColumns = @JoinColumn(name = "course_id"))
-    @Column(name = "tag_value")
+    @Column(name = "tag")
     private List<String> tags = new ArrayList<>();
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -30,12 +30,12 @@ public class CourseModel {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<String> getTags() {

@@ -10,11 +10,8 @@ public class StudentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "full_name")
-    private String fullName;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "name")
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
@@ -27,20 +24,12 @@ public class StudentModel {
         return id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public CourseModel getCourse() {
