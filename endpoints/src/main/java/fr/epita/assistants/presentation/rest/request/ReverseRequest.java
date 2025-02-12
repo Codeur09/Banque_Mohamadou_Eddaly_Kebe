@@ -1,4 +1,4 @@
-package fr.epita.assistants.presentation.request;
+package fr.epita.assistants.presentation.rest.request;
 
 public class ReverseRequest {
     private String content;
