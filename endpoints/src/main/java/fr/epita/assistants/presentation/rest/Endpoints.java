@@ -29,7 +29,7 @@ public class Endpoints {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/reverse")
     public Response reverse(ReverseRequest request) {
-        if (request.getContent().isEmpty()) {
+        if (request.getContent().isEmpty() || request.getContent() == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity("Le contenu de la requête ne doit pas être vide.")
                     .build();
