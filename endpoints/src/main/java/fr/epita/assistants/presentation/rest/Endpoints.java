@@ -4,12 +4,7 @@ import fr.epita.assistants.presentation.rest.request.ReverseRequest;
 import fr.epita.assistants.presentation.rest.response.HelloResponse;
 import fr.epita.assistants.presentation.rest.response.ReverseResponse;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -29,10 +24,8 @@ public class Endpoints {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/reverse")
     public Response reverse(ReverseRequest request) {
-        if (request.getContent().isEmpty() || request.getContent() == null) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Le contenu de la requête ne doit pas être vide.")
-                    .build();
+        if (request == null || request.getContent() == null || request.getContent().isEmpty()) {
+            throw new BadRequestException("Content is empty");
         }
         String original = request.getContent();
         System.out.println("Processing reverse request with content: " + original);
