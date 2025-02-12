@@ -1,8 +1,12 @@
 package fr.epita.assistants.presentation.rest.response;
 
 public class ReverseResponse {
-    private final String original;
-    private final String reversed;
+    private String original;
+    private String reversed;
+
+    public ReverseResponse() {
+        // Constructeur par défaut
+    }
 
     public ReverseResponse(String original, String reversed) {
         this.original = original;
@@ -13,7 +17,15 @@ public class ReverseResponse {
         return original;
     }
 
+    public void setOriginal(String original) {
+        this.original = original;
+    }
+
     public String getReversed() {
         return reversed;
+    }
+
+    public void setReversed(String reversed) {
+        this.reversed = reversed;
     }
 }

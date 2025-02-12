@@ -4,6 +4,7 @@ public class ReverseRequest {
     private String content;
 
     public ReverseRequest() {
+        // Constructeur par défaut
     }
 
     public ReverseRequest(String content) {

@@ -1,7 +1,11 @@
 package fr.epita.assistants.presentation.rest.response;
 
 public class HelloResponse {
-    private final String content;
+    private String content;
+
+    public HelloResponse() {
+        // Constructeur par défaut
+    }
 
     public HelloResponse(String content) {
         this.content = content;
@@ -9,5 +13,9 @@ public class HelloResponse {
 
     public String getContent() {
         return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }
