@@ -1,7 +1,6 @@
-package fr.epita.assistants.presentation.rest.request;
+package fr.epita.assistants.presentation.request;
 
 public class ReverseRequest {
-
     private String content;
 
     public ReverseRequest() {
@@ -19,4 +18,3 @@ public class ReverseRequest {
         this.content = content;
     }
 }
-

@@ -1,7 +1,6 @@
-package fr.epita.assistants.presentation.rest.response;
+package fr.epita.assistants.presentation.response;
 
 public class HelloResponse {
-
     private String content;
 
     public HelloResponse() {
@@ -19,4 +18,3 @@ public class HelloResponse {
         this.content = content;
     }
 }
-

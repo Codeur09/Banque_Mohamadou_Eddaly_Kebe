@@ -1,7 +1,6 @@
-package fr.epita.assistants.presentation.rest.response;
+package fr.epita.assistants.presentation.response;
 
 public class ReverseResponse {
-
     private String original;
     private String reversed;
 
@@ -29,4 +28,3 @@ public class ReverseResponse {
         this.reversed = reversed;
     }
 }
-
