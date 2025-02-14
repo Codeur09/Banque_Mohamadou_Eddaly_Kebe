@@ -1,5 +1,7 @@
 package fr.epita.assistants.inventory.presentation.subscriber;
 
+import fr.epita.assistants.common.api.request.ItemRequest;
+import fr.epita.assistants.common.api.response.ItemResponse;
 import fr.epita.assistants.common.command.*;
 import fr.epita.assistants.common.aggregate.*;
 import fr.epita.assistants.inventory.domain.service.InventoryService;

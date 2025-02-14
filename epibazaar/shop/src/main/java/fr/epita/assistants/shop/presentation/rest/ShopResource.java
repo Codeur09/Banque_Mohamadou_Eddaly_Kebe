@@ -1,5 +1,7 @@
 package fr.epita.assistants.shop.presentation.rest;
 
+import fr.epita.assistants.common.api.request.ItemRequest;
+import fr.epita.assistants.common.api.response.ItemResponse;
 import fr.epita.assistants.common.command.*;
 import fr.epita.assistants.common.utils.ErrorInfo;
 import fr.epita.assistants.shop.domain.service.ShopService;
