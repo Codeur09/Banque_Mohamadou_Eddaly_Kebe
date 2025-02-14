@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
 
 @Entity
-public class GameModel extends PanacheEntity {
-    public String map;
+public class ItemModel extends PanacheEntity {
+    public String type;
+    public Float quantity;
 }
