@@ -13,26 +13,26 @@ public class ShopSubscriber {
     ShopService shopService;
 
     @Incoming("reset-inventory-aggregate")
-    public void resetInventory(IncomingKafkaRecord<String, ResetInventoryAggregate> record) {}
+    public void resetInventory( ResetInventoryAggregate record) {}
 
     @Incoming("collect-item-aggregate")
-    public void collectItem(IncomingKafkaRecord<String, ItemAggregate> record) {}
+    public void collectItem( ItemAggregate record) {}
 
     @Incoming("upgrade-collect-rate-aggregate")
-    public void upgradeCollectRate(IncomingKafkaRecord<String, UpgradeItemProducerAggregate> record) {}
+    public void upgradeCollectRate( UpgradeItemProducerAggregate record) {}
 
     @Incoming("upgrade-movement-speed-aggregate")
-    public void upgradeMovementSpeed(IncomingKafkaRecord<String, UpgradeItemProducerAggregate> record) {}
+    public void upgradeMovementSpeed( UpgradeItemProducerAggregate record) {}
 
     @Incoming("upgrade-stamina-aggregate")
-    public void upgradeStamina(IncomingKafkaRecord<String, UpgradeItemProducerAggregate> record) {}
+    public void upgradeStamina( UpgradeItemProducerAggregate record) {}
 
     @Incoming("create-shop-aggregate")
-    public void createShop(IncomingKafkaRecord<String, ItemAggregate> record) {}
+    public void createShop( ItemAggregate record) {}
 
     @Incoming("sell-item-aggregate")
-    public void sellItems(IncomingKafkaRecord<String, SellItemAggregate> record) {}
+    public void sellItems( SellItemAggregate record) {}
 
     @Incoming("upgrade-shop-price-aggregate")
-    public void upgradeShopPrice(IncomingKafkaRecord<String, UpgradeShopAggregate> record) {}
+    public void upgradeShopPrice( UpgradeShopAggregate record) {}
 }

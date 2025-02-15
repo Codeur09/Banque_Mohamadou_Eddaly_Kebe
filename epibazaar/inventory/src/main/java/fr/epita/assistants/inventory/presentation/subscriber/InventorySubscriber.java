@@ -17,42 +17,34 @@ public class InventorySubscriber {
     InventoryService inventoryService;
 
     @Incoming("reset-inventory-command")
-    public void resetInventory(IncomingKafkaRecord<String, ResetInventoryCommand> record) {
-        inventoryService.resetInventory(record.getPayload());
+    public void resetInventory( ResetInventoryCommand record) {
     }
 
     @Incoming("collect-item-command")
-    public void collectItem(IncomingKafkaRecord<String, CollectItemCommand> record) {
-        inventoryService.collectItem(record.getPayload());
+    public void collectItem( CollectItemCommand record) {
     }
 
     @Incoming("upgrade-collect-rate-command")
-    public void upgradeCollectRate(IncomingKafkaRecord<String, UpgradeCollectRateCommand> record) {
-        inventoryService.upgradeCollectRate(record.getPayload());
+    public void upgradeCollectRate( UpgradeCollectRateCommand record) {
     }
 
     @Incoming("upgrade-movement-speed-command")
-    public void upgradeMovementSpeed(IncomingKafkaRecord<String, UpgradeMovementSpeedCommand> record) {
-        inventoryService.upgradeMovementSpeed(record.getPayload());
+    public void upgradeMovementSpeed( UpgradeMovementSpeedCommand record) {
     }
 
     @Incoming("upgrade-stamina-command")
-    public void upgradeStamina(IncomingKafkaRecord<String, UpgradeStaminaCommand> record) {
-        inventoryService.upgradeStamina(record.getPayload());
+    public void upgradeStamina( UpgradeStaminaCommand record) {
     }
 
     @Incoming("create-shop-command")
-    public void createShop(IncomingKafkaRecord<String, CreateShopCommand> record) {
-        inventoryService.createShop(record.getPayload());
+    public void createShop( CreateShopCommand record) {
     }
 
     @Incoming("sell-item-command")
-    public void sellItems(IncomingKafkaRecord<String, SellItemCommand> record) {
-        inventoryService.sellItems(record.getPayload());
+    public void sellItems( SellItemCommand record) {
     }
 
     @Incoming("upgrade-shop-price-command")
-    public void upgradeShopPrice(IncomingKafkaRecord<String, UpgradeShopPriceCommand> record) {
-        inventoryService.upgradeShopPrice(record.getPayload());
+    public void upgradeShopPrice( UpgradeShopPriceCommand record) {
     }
 }
