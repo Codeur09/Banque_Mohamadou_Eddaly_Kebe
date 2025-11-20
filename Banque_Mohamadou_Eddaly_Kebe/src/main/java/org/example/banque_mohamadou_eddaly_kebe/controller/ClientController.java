@@ -24,14 +24,17 @@ public class ClientController {
 
     @GetMapping
     public ResponseEntity<List<Client>> getAllClients() {
-        return ResponseEntity.ok(clientService.getAllClients());
+        List<Client> clients = clientService.getAllClients();
+        return ResponseEntity.ok(clients);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable Long id) {
-        return clientService.getClientById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        Client client = clientService.getClientById(id);
+        if (client == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(client);
     }
 
     @DeleteMapping("/{id}")
